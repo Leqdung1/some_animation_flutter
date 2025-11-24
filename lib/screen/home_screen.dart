@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_animation/modal_bottom_sheet/home_modal_bottom_sheet.dart';
 
+import '../widgets/button/app_circle_button.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -77,7 +79,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 bottom: value > 100 ? 20 : -100,
                 left: 0,
                 right: 0,
-                child: _buildFloatingActionButton(
+                child: AppCircleButton(
+                  size: 40,
+                  iconSize: 20,
                   icon: Icons.arrow_upward,
                   onTap: () {
                     scrollController.animateTo(
@@ -86,8 +90,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       curve: Curves.easeInOut,
                     );
                   },
-                  size: 40,
-                  iconSize: 20,
                 ),
               );
             },

@@ -45,6 +45,7 @@ class _MainScreenState extends State<MainScreen> {
                 case 2:
                   return ProfileScreen();
               }
+              return null;
             },
           ),
           bottomNavigationBar: BottomNavigator(
