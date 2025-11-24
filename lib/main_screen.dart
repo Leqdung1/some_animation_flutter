@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animation/bottom_navigator.dart';
-import 'package:flutter_animation/home_screen.dart';
-import 'package:flutter_animation/profile_screen.dart';
-import 'package:flutter_animation/search_screen.dart';
+import 'package:flutter_animation/widgets/bottom_navigator.dart';
+import 'package:flutter_animation/screen/home_screen.dart';
+import 'package:flutter_animation/screen/profile_screen.dart';
+import 'package:flutter_animation/screen/search_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -57,40 +57,10 @@ class _MainScreenState extends State<MainScreen> {
             },
             selectedIndex: value,
           ),
-          floatingActionButton:
-              value == 0 ? _buildFloatingActionButton() : null,
         );
       },
     );
   }
 
-  Widget _buildFloatingActionButton() {
-    final ValueNotifier<bool> onTapDown = ValueNotifier(false);
-    return ValueListenableBuilder(
-      valueListenable: onTapDown,
-      builder: (context, value, child) {
-        return GestureDetector(
-          onTap: () {},
-          onTapDown: (details) {
-            onTapDown.value = true;
-          },
-          onTapUp: (details) {
-            onTapDown.value = false;
-          },
-          onTapCancel: () {
-            onTapDown.value = false;
-          },
-          child: Container(
-            width: 60,
-            height: 60,
-            decoration: BoxDecoration(
-              color: value ? Colors.blue.shade200 : Colors.blue,
-              shape: BoxShape.circle,
-            ),
-            child: Icon(Icons.add, color: Colors.white, size: 35),
-          ),
-        );
-      },
-    );
-  }
+  
 }
