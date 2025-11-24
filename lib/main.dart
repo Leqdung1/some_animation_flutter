@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(
+          surfaceTintColor: Colors.white,
           backgroundColor: Colors.white,
           elevation: 0,
           titleTextStyle: TextStyle(
@@ -30,7 +31,4 @@ class MyApp extends StatelessWidget {
       home: const MainScreen(),
     );
   }
-
-
-  
 }
